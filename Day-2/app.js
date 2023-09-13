@@ -31,7 +31,7 @@ const reqListener = (request, response) => {
     });
     return request.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
-      fs.writeFileSync("message.txt", parsedBody.split("=")[1], (err) => {
+      fs.writeFile("message.txt", parsedBody.split("=")[1], (err) => {
         response.statusCode = 302;
         response.setHeader("Location", "/");
         return response.end();
