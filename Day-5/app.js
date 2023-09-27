@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const adminRoute = require("./routes/admin");
+const { adminRoute } = require("./routes/admin");
 const shopRoute = require("./routes/shop");
 const bodyParser = require("body-parser");
 
