@@ -10,7 +10,7 @@ router.post("/product", (req, res, nxt) => {
 });
 
 router.get("/add-product", (req, res, nxt) => {
-  res.sendFile(path.join(rootPath, "views", "add-product.html"));
+  res.render("add-product", { docTitle: "Add Product" });
 });
 
 exports.adminRoute = router;

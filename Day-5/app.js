@@ -16,6 +16,6 @@ app.use("/admin", adminRoute);
 app.use(shopRoute);
 
 app.use((req, res, nxt) => {
-  res.sendFile(path.join(__dirname, "views", "404.html"));
+  res.status(404).render("404", { docTitle: "Page not found" });
 });
 app.listen(3000);

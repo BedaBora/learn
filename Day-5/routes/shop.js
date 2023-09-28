@@ -5,7 +5,6 @@ const rootPath = require("../util/path");
 const { adminData } = require("./admin");
 
 router.get("/", (req, res, nxt) => {
-  console.log(adminData);
   res.render("shop", { prods: adminData, docTitle: "My Shop" });
 });
 
