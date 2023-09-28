@@ -10,7 +10,10 @@ router.post("/product", (req, res, nxt) => {
 });
 
 router.get("/add-product", (req, res, nxt) => {
-  res.render("add-product", { docTitle: "Add Product" });
+  res.render("add-product", {
+    docTitle: "Add Product",
+    inProduct: true,
+  });
 });
 
 exports.adminRoute = router;
