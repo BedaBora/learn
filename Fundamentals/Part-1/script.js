@@ -194,6 +194,7 @@ Use the BMI example from Challenge #1, and the code you already wrote, and impro
 2. Modify the outputs above to use template literals to include the BMI values in the outputs.
 Example: "Mark's BMI (28.3) is higher than John's (23.9)!" or "John's BMI (29.1) is higher than Mark's (27)!".
 */
+/*
 const massMark = 78;
 const heightMark = 1.69;
 const massJohn = 92;
@@ -203,8 +204,6 @@ const BMIMark = massMark / (heightMark * heightMark);
 const BMIJohn = massJohn / (heightJohn * heightJohn);
 console.log(BMIMark, BMIJohn);
 
-/* Write your code below. Good luck! 🙂 */
-
 let message;
 if (BMIMark > BMIJohn) {
   message = `Mark's BMI (${BMIMark}) is higher than John's (${BMIJohn})!`;
@@ -212,3 +211,24 @@ if (BMIMark > BMIJohn) {
   message = `John's BMI (${BMIJohn}) is higher than Mark's (${BMIMark})!`;
 }
 console.log(message);
+*/
+
+// TYPE CONVERSION VS COERCION
+/*
+  Type conversion refers to the manual conversion of one type to another
+  Type coercion is when javascript automatically does the type conversion
+*/
+
+//Type Conversion
+const inputYear = "1991";
+console.log(inputYear + 18); // 199118
+console.log(Number(inputYear) + 18); //Number(inputYear) converts the inputYear string to a number. But it does not change the original value
+console.log(Number("JS")); //Number() on an invalid string results in NaN
+
+console.log(String(1586)); // String() converts an number to a string
+
+//Type Coercion
+console.log("I am " + 65 + " years old."); // Type coercion in action as js automatically converts 65 into string
+console.log("23" - "10" - 3); // Because of the - operator, string values are converted into number values
+console.log("23" * "2"); // Because of the * operator, string values are converted into number values
+console.log("a" - "b"); // result in NaN as a and b cannot be converted to a number
