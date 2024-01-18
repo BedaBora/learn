@@ -309,6 +309,7 @@ Your tasks:
 "Koalas win the trophy" if Koalas win, or
 "Both win the trophy" if their average scores are equal.
 */
+/*
 const scoreDolphins = (96 + 108 + 89) / 3;
 const scoreKoalas = (88 + 91 + 110) / 3;
 
@@ -318,3 +319,30 @@ else if (scoreDolphins < scoreKoalas) winner = "Koalas";
 else winner = "Both";
 
 console.log(`${winner} win the trophy`);
+*/
+
+// SWITCH STATEMENT
+const day = "tuesday";
+
+switch (day) {
+  case "monday":
+    console.log("Plan coding struct");
+    console.log("Go to meetup");
+    break;
+  case "tuesday":
+    console.log("Prepare theory vids");
+    break;
+  case "wednesday":
+  case "thursday":
+    console.log("write code example");
+    break;
+  case "friday":
+    console.log("Record videos");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("CHill");
+    break;
+  default:
+    console.log("not valid day");
+}
