@@ -271,6 +271,7 @@ if (height) {
 
     Similarly in not equal operator, we have != and !==
 */
+/*
 const age = "18";
 console.log(age == 18); // true
 console.log(age === 18); // false
@@ -281,3 +282,17 @@ else if (Number(favNumber) === 7) console.log("7 is a cool number");
 else console.log("You not cool");
 
 if (Number(favNumber) !== 23) console.log("Why not 23?");
+*/
+
+// BOOLEAN LOGIC
+/*
+    and, or, not
+    and will be true only if both the conditions are true
+    or will be true if any of the conditions are true
+    not will invert the condition it is applied to
+*/
+const age = 16;
+console.log(age >= 20 && age < 30); //false
+console.log(!age); //false
+console.log(!(age >= 20) && age < 30); //true
+console.log(age >= 20 || !(age < 30)); //false
