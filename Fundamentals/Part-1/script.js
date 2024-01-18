@@ -218,7 +218,7 @@ console.log(message);
   Type conversion refers to the manual conversion of one type to another
   Type coercion is when javascript automatically does the type conversion
 */
-
+/*
 //Type Conversion
 const inputYear = "1991";
 console.log(inputYear + 18); // 199118
@@ -232,3 +232,31 @@ console.log("I am " + 65 + " years old."); // Type coercion in action as js auto
 console.log("23" - "10" - 3); // Because of the - operator, string values are converted into number values
 console.log("23" * "2"); // Because of the * operator, string values are converted into number values
 console.log("a" - "b"); // result in NaN as a and b cannot be converted to a number
+*/
+
+// Truthy vs Falsy values
+/*
+    5 falsy values
+    0, '', undefined, null, NaN
+*/
+
+console.log(Boolean(0));
+console.log(Boolean(""));
+console.log(Boolean(undefined));
+console.log(Boolean());
+console.log(Boolean("Hello"));
+console.log(Boolean({}));
+
+const money = 0;
+if (money) {
+  console.log("Dont spend it all");
+} else {
+  console.log("Get a job");
+}
+
+let height;
+if (height) {
+  console.log("height is defined");
+} else {
+  console.log("height is undefined");
+}
