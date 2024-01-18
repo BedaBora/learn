@@ -239,7 +239,7 @@ console.log("a" - "b"); // result in NaN as a and b cannot be converted to a num
     5 falsy values
     0, '', undefined, null, NaN
 */
-
+/*
 console.log(Boolean(0));
 console.log(Boolean(""));
 console.log(Boolean(undefined));
@@ -260,3 +260,24 @@ if (height) {
 } else {
   console.log("height is undefined");
 }
+*/
+
+// EQUALITY OPERATORS
+/*
+    JS has 2 type of equality operator.
+    == this only compares the value and not the data type
+    === this checks both data type and value.
+    preferably always use === operator
+
+    Similarly in not equal operator, we have != and !==
+*/
+const age = "18";
+console.log(age == 18); // true
+console.log(age === 18); // false
+
+const favNumber = prompt("Enter your fav number");
+if (Number(favNumber) === 23) console.log("23 is a cool number");
+else if (Number(favNumber) === 7) console.log("7 is a cool number");
+else console.log("You not cool");
+
+if (Number(favNumber) !== 23) console.log("Why not 23?");
