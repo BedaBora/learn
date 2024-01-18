@@ -138,3 +138,26 @@ console.log(BMIMark, BMIJohn);
 const markHigherBMI = BMIMark > BMIJohn;
 console.log(markHigherBMI);
 */
+
+// STRING AND TEMPLATE LITERALS
+const firstName = "Beda";
+const job = "Programmer";
+const birthYear = 1998;
+const year = 2037;
+const beda =
+  "I'm " + firstName + ", a " + (year - birthYear) + " years old " + job; // This is a string using concatination
+
+console.log(beda);
+
+const bedaNew = `I'm ${firstName} a ${year - birthYear} years old ${job}`; // This is a string using template literals. Note that template literals can be defined using '`' and variables inside it can be called using ${}
+console.log(bedaNew);
+
+console.log(
+  "String \n\
+with \n\
+multiple lines"
+); // A multiline string before ES6
+
+console.log(`New
+multi line
+string`); // Multiline string after ES6
