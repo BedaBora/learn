@@ -322,6 +322,7 @@ console.log(`${winner} win the trophy`);
 */
 
 // SWITCH STATEMENT
+/*
 const day = "tuesday";
 
 switch (day) {
@@ -346,3 +347,10 @@ switch (day) {
   default:
     console.log("not valid day");
 }
+*/
+
+//TERNARY OPERATOR
+const age = 15;
+const drink = age >= 18 ? "wine" : "water";
+console.log(drink);
+console.log(`I like to drink ${drink}`);
