@@ -71,6 +71,8 @@ console.log(lastName);
     OPERATOR 
     operator allows us to transform or conbine multiple values
 */
+
+/*
 //MATH OPERATORS
 const now = 2037;
 const ageJonas = now - 1991;
@@ -97,7 +99,7 @@ console.log(x);
 console.log(ageJonas > ageSarah);
 console.log(ageSarah >= 18);
 const isFullAge = ageSarah >= 18;
-
+*/
 /* OPERATOR PRECEDENCE
  We can look into the MDN documentation to understand the operator precedence table
  Operators with higher precedence are calculated first followed by lower precedence.
@@ -107,7 +109,36 @@ const isFullAge = ageSarah >= 18;
  Multiplication, subtration, addition, division have left to right precedence
  Assignment has lowest predecence. assignment has a right to left precedence
  */
+/*
 console.log(now - 1991 > now - 2018);
 let a, b;
 a = b = 25 - 10 + 5;
 console.log(a, b); // 20 20
+*/
+
+// CHALLENGE #1
+
+/*
+Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / (height * height) (mass in kg and height in meters).
+
+Your task is to write some code to help them:
+
+Store Mark's and John's mass and height in variables called massMark, heightMark, massJohn and heightJohn.
+
+Calculate both their BMIs using the formula, and store the results in two variables called BMIMark and BMIJohn.
+
+Log the value of BMIMark and BMIJohn to the console.
+
+BONUS: Create a boolean variable markHigherBMI containing information about whether Mark has a higher BMI than John. Log it to the console too
+const massMark = 78;
+const heightMark = 1.69;
+const BMIMark = massMark / (heightMark * heightMark);
+
+const massJohn = 92;
+const heightJohn = 1.95;
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+
+console.log(BMIMark, BMIJohn);
+const markHigherBMI = BMIMark > BMIJohn;
+console.log(markHigherBMI);
+*/
