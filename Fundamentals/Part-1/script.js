@@ -139,6 +139,7 @@ const markHigherBMI = BMIMark > BMIJohn;
 console.log(markHigherBMI);
 */
 
+/*
 // STRING AND TEMPLATE LITERALS
 const firstName = "Beda";
 const job = "Programmer";
@@ -161,3 +162,24 @@ multiple lines"
 console.log(`New
 multi line
 string`); // Multiline string after ES6
+*/
+
+// IF-ELSE Condition
+const age = 17;
+const isOldEnough = age >= 18;
+if (isOldEnough) {
+  console.log("Sarah can start driving");
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is young with ${yearsLeft} years left`);
+}
+
+const birthYear = 1991;
+let century;
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+
+console.log(century);
