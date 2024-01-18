@@ -34,7 +34,7 @@
 
     JS has dynamic typing. Data types are automatically determined at runtime.
 */
-
+/*
 let jsIsFun = true;
 console.log(jsIsFun);
 console.log(typeof jsIsFun); //typeof is an operator that can be used to know the data type of a variable
@@ -46,3 +46,22 @@ console.log(typeof jsIsFun);
 let thisIsundefined;
 console.log(typeof thisIsundefined);
 console.log(typeof null); // this will print object. which is a bug in js
+*/
+
+/*
+    let VS const VS var
+    we use let and var to declare a variable whose value we plan to modify in the future
+    we use const to make sure that the value of the variable cannot be changed once declared
+    it is good practice to use const during variable declaration by default and only use let or var when absolutely required.
+
+    var works almost same as let and was used before ES6. But we need to try to avoid it.
+
+*/
+
+let age = 30;
+const birthYear = 1997;
+// birthYear = 1998; //This will throw and error
+// const job; //This will also throw an error since we cannot reassign const, we need to declare it during variable definition
+//We can declare variables without using let, const, var. But doing so exposes the variable to the global scope
+lastName = "Beda";
+console.log(lastName);
