@@ -92,6 +92,7 @@ Data 2
 5. Ignore draws this time
 */
 
+/*
 const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
 const scoreDolphins = calcAverage();
@@ -108,3 +109,46 @@ const checkWinner = (avgDolphins, avgKoalas) => {
   }
   console.log(msg);
 };
+*/
+
+//ARRAYS
+/*
+  Arrays are like containers where we can store data to later retrieve them
+*/
+const friends = ["John", "Steven", "Michael"]; //This is an array of strings
+console.log(friends);
+
+const years = new Array(1991, 1992, 1993, 1994, 1995); // Another way of creating arrays
+console.log(friends[0]); //Extract 1st element of array
+console.log(friends[1]); //Extract 2nd element of array
+
+console.log(friends.length); //Gets total number of elements in array
+console.log(friends[friends.length - 1]); //Gets last element in array
+
+friends[1] = "broo"; // mutate the array
+console.log(friends);
+
+const beda = ["Beda", "Bora", 2037 - 1998, friends]; //Array in JS can hold any type of values. An Array can contain another array
+
+console.log(beda);
+
+const calcAge = (birthYear) => 2037 - birthYear;
+
+const ages = [
+  calcAge(years[0]),
+  calcAge(years[1]),
+  calcAge(years[years.length - 1]),
+];
+console.log(ages);
+
+// ARRAY METHODS
+const age = years.map((year) => calcAge(year)); // the map operation will iterate over the elements of the array and transform it according the function mentioned
+console.log(age);
+
+friends.push("Nana"); // Add elements to the end of the array and returns length of the new array
+friends.unshift("Johnny"); // Add elements to the begining of the array and returns the new array length
+
+friends.pop(); // Removes last element of the array and returns it
+friends.shift(); // Removes first element of the array and returns it
+friends.indexOf("Steven"); // Returns the index of the element. If element doesnt exist returns -1
+friends.includes("John"); // Returns true if element exists in the array. It does strict type checking
