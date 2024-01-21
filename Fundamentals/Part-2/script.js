@@ -171,7 +171,7 @@ below
 the function you created before
 4. Bonus: Create an array 'total' containing the total values, so the bill + tip
 */
-
+/*
 const calcTip = (billValue) => {
   if (billValue >= 50 && billValue <= 300) {
     return 0.15 * billValue;
@@ -183,3 +183,66 @@ const calcTip = (billValue) => {
 const bills = [125, 555, 44];
 const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+*/
+
+//OBJECTS - Objects in js are defined as key-value pairs
+const bedaArray = [
+  "Beda",
+  "Bora",
+  2037 - 1998,
+  "programmar",
+  ["Steven", "Pan", "John"],
+];
+
+const beda = {
+  firstName: "Beda",
+  lastName: "Bora",
+  age: 2037 - 1998,
+  job: "programmer",
+  friends: ["Steven", "Pan", "John"],
+};
+// The keys in object are also known as properties
+// The order of these values do not matter.
+console.log(beda);
+
+//Properties of an object can be extracted using dot notation or bracket notation
+console.log(beda.firstName); //using dot notation
+console.log(beda["firstName"]); //bracket
+
+//benefit of bracket notation is that we can put any expression inside the bracket that gets evaluated to ge the property
+const nameKey = "Name";
+console.log(beda["first" + nameKey]);
+console.log(beda["last" + nameKey]);
+
+beda.location = "India"; // Add property to the object
+beda["iss"] = "hahah"; // Add property to the object
+console.log(beda);
+
+// OBJECT METHODS
+// objects can store any type of values. even a function
+const beda2 = {
+  firstName: "Beda",
+  lastName: "Bora",
+  birthYear: 1998,
+  job: "programmer",
+  friends: ["Steven", "Pan", "John"],
+  hasDrivingLicense: true,
+  // calcAge: () => 2037 - this.birthYear, // arrow function does not have the this context
+  // calcAge: function () {
+  //   return 2037 - this.birthYear;
+  // },
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+  // after defining this.age, we have creat a new property in the object after calling this function
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()} year old ${
+      this.job
+    } and he has ${this.hasDrivingLicense ? "a" : "no"} driver's license`;
+  },
+};
+
+console.log(beda2.calcAge());
+console.log(beda2.age);
+console.log(beda2.getSummary());
