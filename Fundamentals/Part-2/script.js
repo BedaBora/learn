@@ -263,6 +263,7 @@ from the method
 3. Log to the console who has the higher BMI, together with the full name and the
 respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
 */
+/*
 const mark = {
   fullName: "Mark Miller",
   mass: 78,
@@ -291,4 +292,68 @@ if (mark.calcBMI() > john.calcBMI()) {
   console.log(
     `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})!`
   );
+}
+*/
+
+// LOOPS
+/*
+loops are a form of control structure that help us perform repetative tasks
+
+*/
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repitition ${rep}.`);
+}
+
+// Looping in arrays
+const beda = ["Beda", "Bora", 2037 - 1998, ["lala", "lola", "lily"]];
+let types = [];
+for (let i = 0; i < beda.length; i++) {
+  // if (typeof beda[i] !== "string") continue; // continue is used to skip the current iteration
+  // if (typeof beda[i] === "number") break; // break is used to exit the loop.
+  types[i] = typeof beda[i]; // Filling types array
+  console.log(beda[i]);
+}
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+// Looping backward
+console.log("------IN REVERSE-----");
+for (let i = beda.length - 1; i >= 0; i--) {
+  console.log(i, beda[i]);
+}
+
+//Loop inside a loop
+for (let i = 1; i < 4; i++) {
+  console.log(`-------- Starting exercise ${i}`);
+  for (let j = 1; j < 6; j++) {
+    console.log(`Lifting weight ${j}`);
+  }
+}
+
+// The while loop
+/*
+ diff between for and while loop is
+ in while loop, we mention the condition only and we explicitely modify the variable inside the while iteration 
+ in this sense while loop is more versatile.
+ */
+
+let myRep = 1;
+while (myRep <= 10) {
+  console.log(`Lifting weight ${myRep}`);
+  myRep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+//Make sure to use the while loop carefully to avoid infinite looping
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
 }
