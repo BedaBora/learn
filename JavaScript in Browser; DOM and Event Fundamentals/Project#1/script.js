@@ -148,13 +148,11 @@ const validateGuess = (guess) => {
 
 document.querySelector(".check").addEventListener("click", () => {
   const guess = Number(document.querySelector(".guess").value);
-  let msg;
   if (score > 1) {
-    msg = validateGuess(guess);
+    setMessage(validateGuess(guess));
   } else {
-    msg = playerLose();
+    setMessage(playerLose());
   }
-  setMessage(msg);
 });
 
 document.querySelector(".again").addEventListener("click", () => {
