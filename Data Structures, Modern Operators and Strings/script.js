@@ -40,6 +40,11 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredient) {
+    console.log(mainIngredient);
+    console.log(otherIngredient);
+  },
 };
 
 // ARRAY DESTRUCTURING- It is a way of unpacking values from and array or object into seperate variables
@@ -129,6 +134,7 @@ restaurant.orderDelivery({
 });
 */
 
+/*
 // SPREAD OPERATOR
 // The spread operator can be used to expand array to its individual elements
 console.log(...[1, 2, 3, 4, 5, 6]);
@@ -166,3 +172,42 @@ const newRest = { ...restaurant, founder: "Beda" };
 newRest.name = "Hahah";
 console.log(restaurant);
 console.log(newRest);
+*/
+
+// REST OPERATOR
+// it is similar to the spread operator but unlike spread which expands array to individual elements
+// the rest operator condenses multiple elements into and array
+
+// spread operator, used on right side of equal operator
+const arr = [1, 2, ...[3, 4, 5]];
+
+// rest operator, used on left side of equal operator
+const [a, b, ...arr2] = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log(a, b, arr2);
+
+// the rest element must be the last element
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+
+console.log(pizza, risotto, otherFood);
+
+// In objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+
+// In functions
+const add = function (...numbers) {
+  const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+const x = [5, 10, 15];
+add(...x);
+
+restaurant.orderPizza("mushroom", "onion", "olives", "spinach");
