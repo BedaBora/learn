@@ -214,6 +214,7 @@ add(...x);
 restaurant.orderPizza("mushroom", "onion", "olives", "spinach");
 */
 
+/*
 // SHORT CIRCUITING
 console.log(0 || "Jonas"); // if the first value is a truthy value, the second operand will not be evaluated
 console.log(3 || "Jonas");
@@ -244,3 +245,16 @@ restaurant.orderPizza && restaurant.orderPizza("Mushroom", "spinach");
 // Summary
 // OR operator will return the first truthy value of all occurance or last falsy value if all are falsy
 // AND operator will return the first falsy value of all occurance or the last truthy value if all are truthy
+*/
+
+restaurant.numGuest = 0;
+
+const guest1 = restaurant.numGuest || 10;
+console.log(guest1);
+
+// we want the guest2 variable to get the value 0 but we are getting 10 since 0 is a falsy value
+// to prevent this, we take the help of nullish coalescing introduced in ES2020
+
+// Nullish :null and undefined
+const guest2 = restaurant.numGuest ?? 10;
+console.log(guest2); //0 the nullish coalescing operator works on the concept of nulish value instead of falsy value
