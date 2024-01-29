@@ -36,6 +36,10 @@ const restaurant = {
       `Order received! ${this.starterMenu[startIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
 };
 
 // ARRAY DESTRUCTURING- It is a way of unpacking values from and array or object into seperate variables
@@ -85,6 +89,7 @@ const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
 */
 
+/*
 // OBJECT DESTRUCTURING
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
@@ -122,3 +127,42 @@ restaurant.orderDelivery({
   mainIndex: 2,
   startIndex: 2,
 });
+*/
+
+// SPREAD OPERATOR
+// The spread operator can be used to expand array to its individual elements
+console.log(...[1, 2, 3, 4, 5, 6]);
+
+const arr = [7, 8, 9, 10, ...[11, 12, 13]]; // 7, 8, 9, 10, 11, 12, 13
+const arr2 = [1, 2, 3, ...arr]; // 1, 2, 3, 7, 8, 9, 10, 11, 12, 13
+console.log(arr);
+console.log(arr2);
+
+//Diff between spread operator an destructuring
+// spread operator returns all the elements in the array as individual values and doesbt create new variables.
+// destructuring returns the individual elements and new variables
+
+// Copy Array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Join 2 arrays
+const menus = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menus);
+
+//***The spread operator works on all iterables like string, array, set, map/
+const str = "Beda";
+console.log([...str, " ", "B."]);
+
+// const ingredients = [
+//   prompt("Let's make pasta! Ingredient 1 ?"),
+//   prompt("Ingredient 2 ?"),
+//   prompt("Ingredient 3 ?"),
+// ];
+
+//restaurant.orderPasta(...ingredients);
+
+// Since ES18, spread operator works on objects as well
+const newRest = { ...restaurant, founder: "Beda" };
+newRest.name = "Hahah";
+console.log(restaurant);
+console.log(newRest);
