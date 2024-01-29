@@ -174,6 +174,7 @@ console.log(restaurant);
 console.log(newRest);
 */
 
+/*
 // REST OPERATOR
 // it is similar to the spread operator but unlike spread which expands array to individual elements
 // the rest operator condenses multiple elements into and array
@@ -211,3 +212,35 @@ const x = [5, 10, 15];
 add(...x);
 
 restaurant.orderPizza("mushroom", "onion", "olives", "spinach");
+*/
+
+// SHORT CIRCUITING
+console.log(0 || "Jonas"); // if the first value is a truthy value, the second operand will not be evaluated
+console.log(3 || "Jonas");
+console.log(undefined || "Jonas");
+console.log(undefined || 0 || "" || "Hello" || 23 || null); // It will return the first occurance of a truthy value
+
+const guest1 = restaurant.numGuest ? restaurant.numGuest : 10;
+console.log(guest1); //10
+
+// restaurant.numGuest = 23;
+// console.log(guest1); //23
+
+const guest2 = restaurant.numGuest || 10;
+console.log(guest2);
+
+console.log("------ AND SHORT CIRCUITING --------");
+
+console.log(0 && "Johnas"); // trailing operations are evaluated only when the prev value is a truthy value
+console.log(1 && "Hello" && "Johnas"); // Where OR shortcircuiting returns the first evaluated truthy value, AND shortcircuiting returns last evaluated truthy value
+
+console.log("Hello" && 23 && null && "Beda"); // returns null
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza("Mushroom", "spinach");
+}
+
+restaurant.orderPizza && restaurant.orderPizza("Mushroom", "spinach");
+// Summary
+// OR operator will return the first truthy value of all occurance or last falsy value if all are falsy
+// AND operator will return the first falsy value of all occurance or the last truthy value if all are truthy
