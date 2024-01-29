@@ -30,10 +30,16 @@ const restaurant = {
   order: function (startingIndex, mainIndex) {
     return [this.starterMenu[startingIndex], this.mainMenu[mainIndex]];
   },
+
+  orderDelivery: function ({ startIndex, mainIndex, address, time }) {
+    console.log(
+      `Order received! ${this.starterMenu[startIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 };
 
 // ARRAY DESTRUCTURING- It is a way of unpacking values from and array or object into seperate variables
-const arr = [1, 2, 3];
+/*const arr = [1, 2, 3];
 const a = arr[0];
 const b = arr[1];
 const c = arr[2];
@@ -77,3 +83,42 @@ console.log(i, j, k);
 // read the given values if the value is not found during destructuring
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
+*/
+
+// OBJECT DESTRUCTURING
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+//assign our own name to the extracted object properties
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+//Default values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating variables
+let a = 111;
+let b = 999;
+const object = { a: 23, b: 7, c: 14 };
+//{ a, b } = object; // we need to cover it in paranthesis
+//because when we start a line with { in js, js expects a code block.
+//to make js understand it is destructuring and reassignment, we cover it in ()
+({ a, b } = object);
+
+// Destructuring objects inside the object
+const {
+  fri: { open, close },
+} = openingHours;
+
+console.log(open, close);
+restaurant.orderDelivery({
+  time: "22:30",
+  address: "viva la vida",
+  mainIndex: 2,
+  startIndex: 2,
+});
