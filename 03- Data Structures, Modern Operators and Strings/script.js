@@ -246,7 +246,7 @@ restaurant.orderPizza && restaurant.orderPizza("Mushroom", "spinach");
 // OR operator will return the first truthy value of all occurance or last falsy value if all are falsy
 // AND operator will return the first falsy value of all occurance or the last truthy value if all are truthy
 */
-
+/*
 restaurant.numGuest = 0;
 
 const guest1 = restaurant.numGuest || 10;
@@ -258,3 +258,34 @@ console.log(guest1);
 // Nullish :null and undefined
 const guest2 = restaurant.numGuest ?? 10;
 console.log(guest2); //0 the nullish coalescing operator works on the concept of nulish value instead of falsy value
+*/
+
+// LOGICAL ASSIGNMENT
+const rest1 = {
+  name: "First",
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: "Second",
+  owner: "Mario",
+};
+
+// rest1.numGuests = rest1.numGuests || 11;
+// rest2.numGuests = rest2.numGuests || 11;
+
+//using the OR assignment operator
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 11;
+
+//using the NULL COALESCING assignment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 11;
+
+// rest2.owner = rest2.owner && "<ANONYMOUS>";
+
+//using the AND assignment operator
+rest1.owner &&= "<ANONYMOUS>";
+rest2.owner &&= "<ANONYMOUS>";
+console.log(rest1);
+console.log(rest2);
