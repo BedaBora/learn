@@ -318,6 +318,7 @@ number of goals that were scored in total (number of player names passed in)
 team is more likely to win, without using an if/else statement or the ternary
 operator.
 */
+/*
 const game = {
   team1: "Bayern Munich",
   team2: "Borrussia Dortmund",
@@ -381,3 +382,15 @@ console.log(
     (team1 > team2 && "Team 2 Wins") ||
     "Its a draw"
 );
+*/
+
+// FOR-OF LOOPING
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+for (const item of menu) {
+  console.log(item);
+}
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
