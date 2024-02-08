@@ -452,6 +452,7 @@ for (const [key, { open, close }] of entries) {
 }
 */
 
+/*
 //------------------ CHALLENGE #2 ------------------//
 const game = {
   team1: "Bayern Munich",
@@ -515,7 +516,7 @@ Hummels: 1,
 Lewandowski: 2
 }
 */
-
+/*
 //1
 const goalScored = game.scored;
 for (const [i, player] of goalScored.entries())
@@ -540,3 +541,30 @@ for (const scorer of goalScored)
   scorers[scorer] = (scorers[scorer] && scorers[scorer] + 1) || 1;
 
 console.log(scorers);
+*/
+
+// SETS
+// set does not have any dupicates
+// order of elements is set is not maintained
+const orderesSet = new Set([
+  "Pizza",
+  "Pasta",
+  "Pasta",
+  "Pizza",
+  "Risotto",
+  "Risotto",
+]);
+console.log(orderesSet);
+
+console.log(new Set("Beda"));
+//Set methods
+console.log(orderesSet.size);
+console.log(orderesSet.has("Bread"));
+
+orderesSet.add("Garlic Bread");
+orderesSet.add("Garlic Bread");
+orderesSet.delete("Pizza");
+console.log(orderesSet);
+
+console.log(orderesSet[0]); // will not work since in a set, there are not indices
+// we can iterate over the set but there is no method to retrieve elements of a set
