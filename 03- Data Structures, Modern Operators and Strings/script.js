@@ -542,7 +542,7 @@ for (const scorer of goalScored)
 
 console.log(scorers);
 */
-
+/*
 // SETS
 // set does not have any dupicates
 // order of elements is set is not maintained
@@ -568,3 +568,66 @@ console.log(orderesSet);
 
 console.log(orderesSet[0]); // will not work since in a set, there are not indices
 // we can iterate over the set but there is no method to retrieve elements of a set
+*/
+
+// MAPS
+// map is a ds that is used to store data in key value form
+// in object, keys are always strings. but in maps, key can be any datatype
+
+const rest = new Map();
+rest.set("name", "classico Italliano");
+rest.set(1, "Firenze, Italy");
+console.log(rest.set(2, "Lisbon, Portugal")); // the set method returns the new array
+rest
+  .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+  .set("open", 11)
+  .set("close", 23)
+  .set(true, "we are Open")
+  .set(false, "we are closed");
+
+//console.log(rest.get(true));
+
+const time = 21;
+console.log(rest.get(time > rest.get("open") && time < rest.get("close")));
+
+console.log(rest.has("categories"));
+rest.delete(2);
+console.log(rest);
+console.log(rest.size);
+// rest.clear();
+// console.log(rest);
+
+const arr = [1, 2];
+rest.set(arr, "Test");
+console.log(rest.get([1, 2]));
+console.log(rest.get(arr));
+// wil return undefined. because behind the scene,
+//js read the array in the key from the map and the one we defined differently
+
+// Another way of creating a map
+const question = new Map([
+  ["question", "what is the best programming language in the world?"],
+  [1, "C"],
+  [2, "Java"],
+  [3, "Javascript"],
+  ["correct", 3],
+  [true, "Correct"],
+  [false, "try again"],
+]);
+
+console.log(question);
+
+//convert object to map
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+//Quiz app
+console.log(question.get("question"));
+for (const [key, value] of question) {
+  if (typeof key === "number") console.log(`Answer ${key}: ${value}`);
+}
+//const answer = Number(prompt("your answer"));
+//console.log(question.get(answer === question.get("correct")));
+
+//convert map to array
+console.log(...question);
