@@ -401,6 +401,7 @@ for (const [i, el] of menu.entries()) {
 }
 */
 
+/*
 // OPTIONAL CHAINING
 
 //Without optional chaining
@@ -424,3 +425,27 @@ console.log(restaurant.orderResotto?.(0, 1) ?? "Method dont exist");
 const users = [{ name: "Beda", email: "beda@gmail.com" }];
 
 console.log(users[0]?.name ?? "User empty");
+*/
+
+// LOOPING OVER OBJECTS
+
+// property names
+const properties = Object.keys(openingHours);
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += ` ${day} `;
+}
+console.log(openStr);
+
+// property values
+const values = Object.values(openingHours);
+console.log(values);
+
+// entire object
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
