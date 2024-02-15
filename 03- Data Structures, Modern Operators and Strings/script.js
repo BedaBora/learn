@@ -723,6 +723,7 @@ for (const [key, val] of gameEvents.entries()) {
 }
 */
 
+/*
 // WORKING WITH STRINGS
 // We may think of strings as array of characters
 const airline = "TAP Air Portugal";
@@ -849,3 +850,57 @@ const placesInLine = function (n) {
 
 placesInLine(5);
 placesInLine(7);
+*/
+
+//------------------ CHALLENGE #4 ------------------//
+/*
+Write a program that receives a list of variable names written in underscore_case
+and convert them to camelCase.
+The input will come from a textarea inserted into the DOM (see code below to
+insert the elements), and conversion will happen when the button is pressed.
+Test data (pasted to textarea, including spaces):
+underscore_case
+first_name
+Some_Variable
+calculate_AGE
+delayed_departure
+Should produce this output (5 separate console.log outputs):
+underscoreCase    ✅
+firstName         ✅✅
+someVariable      ✅✅✅
+calculateAge      ✅✅✅✅
+delayedDeparture  ✅✅✅✅✅
+Hints:
+§ Remember which character defines a new line in the textarea 😉
+§ The solution only needs to work for a variable made out of 2 words, like a_b
+§ Start without worrying about the ✅. Tackle that only after you have the variable
+name conversion working 😉
+§ This challenge is difficult on purpose, so start watching the solution in case
+you're stuck. Then pause and continue!
+Afterwards, test with your own test data!
+GOOD LUCK 😀
+ */
+
+// Insert text are and button to dom
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+
+document
+  .querySelector("button")
+  .addEventListener("click", underScoreToCamelCaseConverter);
+
+function underScoreToCamelCaseConverter() {
+  const text = document.querySelector("textarea").value.toLowerCase().trim();
+  const words = text.split("\n");
+  const camelCaseWords = [];
+  for (const [i, word] of words.entries()) {
+    const splitWords = word.split("_");
+    if (word.indexOf("_") > -1 && splitWords.length === 2) {
+      const newWord =
+        splitWords[0] +
+        splitWords[1].replace(splitWords[1][0], splitWords[1][0].toUpperCase());
+      camelCaseWords.push(newWord.padEnd(20, " ") + "✅".repeat(i + 1));
+    }
+  }
+  console.log(camelCaseWords.join("\n"));
+}
