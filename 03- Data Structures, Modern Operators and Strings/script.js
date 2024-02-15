@@ -688,7 +688,7 @@ average, every 9 minutes" (keep in mind that a game has 90 minutes)
 whether it's in the first half or second half (after 45 min) of the game, like this:
 [FIRST HALF] 17: ⚽ GOAL
 */
-
+/*
 const gameEvents = new Map([
   [17, "⚽ GOAL"],
   [36, "🔁 Substitution"],
@@ -721,3 +721,131 @@ for (const [key, val] of gameEvents.entries()) {
     `[${(key <= 45 && "FIRST HALF") || "SECOND HALF"}] ${key}: ${val}`
   );
 }
+*/
+
+// WORKING WITH STRINGS
+// We may think of strings as array of characters
+const airline = "TAP Air Portugal";
+const plane = "A320";
+
+console.log(plane[0]);
+console.log(Number(plane[1]));
+console.log(plane[2]);
+console.log("8737"[2]);
+console.log("8737".length);
+console.log(airline.indexOf("r"));
+
+// index method can be used to get the index of s string from where we want to extract a part of it
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(" ")));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  const seatLetter = seat.slice(-1);
+  if (seatLetter === "B" || seatLetter === "E") {
+    console.log(`${seat} is middle seat.`);
+  } else {
+    console.log(`${seat} is not middle seat.`);
+  }
+};
+
+checkMiddleSeat("11B");
+checkMiddleSeat("23C");
+checkMiddleSeat("3E");
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fixing Capitalization in passanger name
+const passanger = "beDAbRata";
+const passangerFixed =
+  passanger[0].toUpperCase() + passanger.toLowerCase().slice(1);
+console.log(passangerFixed);
+
+// comparing email
+const email = "hello.world.io";
+const loginEmail = "   heLLO.World.IO \n";
+console.log(email, loginEmail);
+console.log(loginEmail.trim().toLowerCase() === email);
+
+// Replacing part of string
+const priceUS = "288.77$";
+const priceGB = priceUS.replace(".", ",").replace("$", "€"); // replace method replaces only the first occurance
+console.log(priceGB);
+
+const announcements =
+  "All passangers come to boarding door 23, Boarding door 23!";
+//console.log(announcements.replaceAll("door", gate)); // replaceAll method is not yet available in js
+
+// we can use regex to replace all occurances
+console.log(announcements.replace(/door/g, "gate"));
+
+// booleans
+const plane2 = "Airbus A320neo";
+console.log(plane2.includes("A320"));
+console.log(plane2.includes("Air"));
+
+if (plane2.startsWith("Airbus") && plane2.endsWith("neo")) {
+  console.log("Part of the new airbus family");
+}
+
+//Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes("knife") || baggage.includes("gun")) {
+    console.log("get lost");
+  } else {
+    console.log("welcome");
+  }
+};
+
+checkBaggage("I have a laptop, some Food and a pocket knife");
+checkBaggage("Socks and camera");
+
+// split and join
+console.log("a+very+nice+string".split("+"));
+console.log("Beda Bora".split(" "));
+const [firstName, lastName] = "Beda Bora".split(" ");
+const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(" ");
+  const namesUpper = [];
+  for (const n of names) {
+    namesUpper.push(n[0].toUpperCase() + n.slice(1));
+  }
+  console.log(namesUpper.join(" "));
+};
+
+capitalizeName("john jmith davis");
+
+// padding
+const message = "GO to gate 23!";
+console.log(message.padStart(25, "+").padEnd(35, "+"));
+
+const maskedCreditCard = function (number) {
+  const str = number + "";
+  const last = str.slice(-4);
+  return last.padStart(str.length, "*");
+};
+
+console.log(43578866954123);
+console.log(maskedCreditCard(43578866954123));
+console.log("4357886695412387070");
+console.log(maskedCreditCard("4357886695412387070"));
+
+//Repeat
+const message2 = "Bad weather... All departures delayed...";
+console.log(message2.repeat(5));
+
+const placesInLine = function (n) {
+  console.log(`There are ${n} planes waiting in line ${"✈️".repeat(n)}`);
+};
+
+placesInLine(5);
+placesInLine(7);
