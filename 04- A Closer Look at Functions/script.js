@@ -236,6 +236,7 @@ Test data for bonus:
 § Data 2: [1, 5, 3, 9, 6, 1]
 */
 
+/*
 const poll = {
   question: "What is your favourite programming language?",
   options: ["0: JavaScript", "1: Python", "2: Rust", "3: C++"],
@@ -271,3 +272,17 @@ const data1 = [5, 2, 3];
 const data2 = [1, 5, 3, 9, 6, 1];
 poll.displayResults.call({ answers: data1 });
 poll.displayResults.call({ answers: data2 }, "string");
+*/
+
+// we can run this fucntion multiple times
+// const runOnce = function () {
+//   console.log("Run this only once");
+// };
+
+// runOnce();
+
+// This function is immediately invoked but never again
+// by wrapping the function in (), we define a scope
+(function () {
+  console.log("Run this only once");
+})();
