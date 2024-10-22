@@ -61,4 +61,4 @@ if today in birthdays_dict:
         connection.login(user=my_email, password=app_password)
         connection.sendmail(from_addr=my_email,
                             to_addrs="beda.banking@gmail.com",
-                            msg = f"Subject:Happy Birthday!!\n\n{content}")
+                            msg = f"Subject:Happy Birthday!!\n\n{contents}")
