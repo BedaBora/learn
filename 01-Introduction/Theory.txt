@@ -1,0 +1,11 @@
+What is node.js?
+It is a javascript runtime that can be run on server. While javascript was initially meant to be run on the browser.
+But with node.js, we can run javascript code on the server (or any machine/environment)
+
+Node js uses V8 engine to run js on server. The same engine developed by google to execute javascript on the browser
+
+V8 is written in c++. V8 takes in javascript code, and then compiles it to machine code.
+
+Node REPL (Read Eval Print Loop)
+we can enter node REPL by simply running rone on the console.
+Codes in the REPL is not saved anywhere. It can be used for simple node code analysis
