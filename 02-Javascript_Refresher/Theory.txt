@@ -1,0 +1,4 @@
+Javascript is 
+1. a weakly typed (no explicit type assignment, dtaa types can be switched dynamically)
+2. Object Oriented (data can be organised in logical objects)
+3. Versatile language (We can run it any where, on the browser or on the server with node)
