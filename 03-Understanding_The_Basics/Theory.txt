@@ -1,0 +1,45 @@
+Node Life cycle & Event loop
+Node will start the script, parse the code, register the variables and functions and the it will start an event loop
+
+As the name suggests, the event loop keeps running in a loop as long as there event listeners registered
+
+The node application is managed by this event loop
+The entire node application uses a single thread to run.
+That is why it uses the concept of event loop where it is always running and listeneing for events to occur
+
+we can unregister the event listener using process.exit()
+
+
+Streams & Buffers
+Incoming request are written in chunks by node into multiple parts
+Stream ====|part-1|====|part-2|=====|part-3|====|part-4|====> Fully Parsed
+
+In node to work on these chunks, we use buffers
+It is a construct which helps us to work with multiple chunks of data before releaseing them once we are done working on those chunks
+
+Event driven code execution
+In node js, we will observe that in many places, there will be instances when a functionB called after functionA
+will be executed before the functionA execution is completed.
+This will be in case of async code when functionA is a event listener 
+We are basically registering functionA to run sometime in the future and not necessarily right before functionA
+This is called event driven cod execution
+
+Node js - SIngle thread, event loop and blocking code
+1. Node js runs on one single javascript thread
+The event loop is wlways started by node js as soon as the porgram starts
+This is responsible for handling event callbacks
+only the callbacks are being handled by the event loop
+lets say there is a writefile request that is passed on the node. in the meantime, another request is triggered
+this heavyweight operations are being handled by something called as worker pool. it is separated from the event loop and it can spawn up other threads
+once the thread in the worker pool is done with its operation, it will trigger a callback too the event loop
+not the event loop will then invoke the execution to the callback
+
+
+The event loop life cycle
+1. Timer: In the start, it check for any timer callbacks. eg: setTimeout, setInterval
+2. Pending callbacks: Execute any i/o related callbacks that were deferred
+3. Poll: look for new I/O events and execute their callbacks
+        In this phase, it can defer execution into phase-2 or jump to timer execution in phase-1
+4. Check: execute setImmediate() callbacks
+5. Close calbacks: execute all 'close' events
+6. process.exit in case all the reference to callbacks is finished  
