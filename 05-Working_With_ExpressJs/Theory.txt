@@ -1,0 +1,18 @@
+What is express.js?
+It is a framework that has a lot of utility functions that help us rowk with request and responses more elegantly so tha twe can focus on busines slogics
+
+Alternatives to expressjs:
+vanilla node.js
+adonis.js
+koa
+sails.js
+
+To install express, we can simply do 
+node install --save express
+we use --sav eand not --save-dev because it is required in the production as well
+
+Express follows a middleware pattern
+
+Request ===> Middleware ==[next()]==> Middleware ==[next()]==> Response
+
+THis pattern gives express its plugable nature
